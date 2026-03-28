@@ -28,3 +28,14 @@ def data():
 
 data()
 
+# Create a function to extract data from the table and display it.
+def extract():
+    conn = psycopg2.connect(dbname='postgres', user='postgres', password='1234', host='localhost', port='6304')
+    cursor = conn.cursor() 
+    cursor.execute('''select * from employees''')
+    show = cursor.fetchone()
+    print(show)
+    #print('Data inserted successfully')
+
+extract()
+
