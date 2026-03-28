@@ -25,6 +25,7 @@ DATABASE OPERATIONS USING PYTHON
  - Install POSTGRESql
  - Install Psycopg2 in command prompt
  - Clone this repository
+ - https://github.com/singhnav0309-creator/animated-robot.git
  - Open terminal or Command Prompt or SQL Shell
  - Navigate to the Assignment folder
     Run the program using:
