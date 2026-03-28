@@ -1,5 +1,6 @@
-import psycopg2
-def table():
+try:
+ import psycopg2
+ def table():
      conn = psycopg2.connect(dbname='postgres', user='postgres', password='1234', host='localhost', port='6304')
 
      cursor = conn.cursor()
@@ -9,7 +10,7 @@ def table():
      conn.commit()
      conn.close()
 
-def data():
+ def data():
     conn = psycopg2.connect(dbname='postgres', user='postgres', password='1234', host='localhost', port='6304')
 
     cursor = conn.cursor()
@@ -26,10 +27,10 @@ def data():
     conn.commit()
     conn.close()
 
-data()
+ data()
 
 # Create a function to extract data from the table and display it.
-def extract():
+ def extract():
     conn = psycopg2.connect(dbname='postgres', user='postgres', password='1234', host='localhost', port='6304')
     cursor = conn.cursor() 
     cursor.execute('''select * from employees''')
@@ -37,5 +38,12 @@ def extract():
     print(show)
     #print('Data inserted successfully')
 
-extract()
+ extract()
+
+except Exception as e:
+    print('Error:', e)  
+
+except ValueError:
+    print('Invalid input. Please enter a valid value.')
+     
 
